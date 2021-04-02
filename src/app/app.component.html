@@ -2,7 +2,7 @@
 {{ title }}
 <button (click)="addItem()">Add</button>
 
-<app-product></app-product>
+
 
 <div [ngSwitch]="title">
   <p *ngSwitchCase="'Daniel'">Este es Daniel</p>
@@ -27,8 +27,10 @@
 </ul>
 
 <div *ngFor="let product of products">
-   {{ product.title }}
-   <img [src]="product.image" alt="Imagen del producto">
-   {{ product.price }}
-</div>
 
+  <app-product 
+      (productClicked)="clickProduct($event)" 
+      [product]="product">
+  </app-product>
+
+</div>
