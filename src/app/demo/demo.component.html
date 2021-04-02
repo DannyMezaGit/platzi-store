@@ -1,0 +1,29 @@
+<input type="text" [(ngModel)]="title">
+{{ title }}
+<button (click)="addItem()">Add</button>
+
+<input type="text" [(ngModel)]="power">
+{{ power | exponential }}
+
+
+<div [ngSwitch]="title">
+  <p *ngSwitchCase="'Daniel'">Este es Daniel</p>
+  <p *ngSwitchCase="'Alfredo'">Este es Alfredo</p>
+  <p *ngSwitchCase="'Manuel'">Este es Manuel</p>
+  <p *ngSwitchDefault>No hay match</p>
+</div>
+
+<div *ngIf="1 === 1">
+  Contendio a renderizar cuando la condición es 'true'
+</div>
+
+
+<ul>
+  <li *ngIf="items.length === 0"> La lista está vacía </li>
+  <li *ngFor="let name of items; index as i">
+    {{ i }}.- {{ name }}
+
+    <button (click)="deleteItem(i)">Delete</button>
+
+  </li>
+</ul>
