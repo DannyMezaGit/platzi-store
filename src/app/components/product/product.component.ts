@@ -15,6 +15,8 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  today: Date = new Date();
+
   addCart() {
     console.log('Añadir al carrito')
     this.productClicked.emit(this.product.id);
