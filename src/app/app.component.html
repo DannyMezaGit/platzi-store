@@ -2,6 +2,8 @@
 {{ title }}
 <button (click)="addItem()">Add</button>
 
+<app-product></app-product>
+
 <div [ngSwitch]="title">
   <p *ngSwitchCase="'Daniel'">Este es Daniel</p>
   <p *ngSwitchCase="'Alfredo'">Este es Alfredo</p>
